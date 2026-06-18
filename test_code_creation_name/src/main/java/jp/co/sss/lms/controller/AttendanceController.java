@@ -61,7 +61,7 @@ public class AttendanceController {
 		if (loginUserUtil.isStudent()) {
 			lmsUserId = loginUserDto.getLmsUserId();
 			courseId = loginUserDto.getCourseId();
-			// Task.25 過去日が未入力の場合の表示
+			// Task.25 過去日が未入力の場合の表示 
 			boolean notEnterFlg = studentAttendanceService.notEnterCheck();
 			model.addAttribute("notEnterFlg", notEnterFlg);
 		} else {
