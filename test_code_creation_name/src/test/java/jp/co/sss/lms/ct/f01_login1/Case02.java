@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
+import jp.co.sss.lms.util.Constants;
+
 /**
  * 結合テスト ログイン機能①
  * ケース02
@@ -21,16 +23,6 @@ import org.junit.jupiter.api.TestMethodOrder;
 public class Case02 {
 
 	private static LoginPage page;
-	
-	private static final String TRUE_TITLE = "ログイン | LMS";
-	
-	private static final String TRUE_H2 = "ログイン";
-	
-	private static final String TRUE_ERROR = "* ログインに失敗しました。";
-	
-	private static final String WRONG_ID = "student";
-	
-	private static final String WRONG_PASS = "1111";
 	
 	/** 前処理 */
 	@BeforeAll
@@ -51,8 +43,8 @@ public class Case02 {
 	void test01() {
 		goTo("http://localhost:8080/lms");
 		
-		assertEquals(TRUE_TITLE, webDriver.getTitle());
-		assertEquals(TRUE_H2, page.getH2());
+		assertEquals(Constants.TRUE_TITLE_LOGIN, webDriver.getTitle());
+		assertEquals(Constants.TRUE_H2, page.getH2());
 		
 		getEvidence(new Object(){});
 	}
@@ -62,11 +54,11 @@ public class Case02 {
 	@DisplayName("テスト02 DBに登録されていないユーザーでログイン")
 	void test02() {
 		
-		page.tryLogin(WRONG_ID, WRONG_PASS);
+		page.tryLogin(Constants.WRONG_ID, Constants.WRONG_PASS);
 	
 		page.waitH2();
-		assertEquals(TRUE_TITLE, webDriver.getTitle());
-		assertEquals(TRUE_ERROR, page.getError());
+		assertEquals(Constants.TRUE_TITLE_LOGIN, webDriver.getTitle());
+		assertEquals(Constants.TRUE_ERROR, page.getError());
 		
 		getEvidence(new Object(){});
 	}

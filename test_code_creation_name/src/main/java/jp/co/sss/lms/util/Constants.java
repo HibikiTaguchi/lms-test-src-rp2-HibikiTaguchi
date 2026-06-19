@@ -362,5 +362,26 @@ public interface Constants {
 	/** 管理者フラグ */
 	public static final Short ADMIN_FLG_FALSE = 0;
 	public static final Short ADMIN_FLG_TRUE = 1;
+	
+	
+	// テスト期待値
+	public static final String TRUE_TITLE_LOGIN = "ログイン | LMS";
+	
+	public static final String TRUE_H2 = "ログイン";
+	
+	public static final String TRUE_ERROR = "* ログインに失敗しました。";
+	
+	public static final String TRUE_TITLE_COURCE_DETAIL = "コース詳細 | LMS";
+	
+	public static final String TRUE_LI_ACTIVE = "コース詳細";
+	
+	// テスト入力値
+	public static final String WRONG_ID = "student";
+	
+	public static final String WRONG_PASS = "1111";
+	
+	public static final String TRUE_LOGIN_ID = "StudentAA01";
+	
+	public static final String TRUE_PASSWORD = "StudentAA011";
 
 }

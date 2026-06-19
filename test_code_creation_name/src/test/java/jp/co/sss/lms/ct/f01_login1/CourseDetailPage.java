@@ -1,0 +1,29 @@
+package jp.co.sss.lms.ct.f01_login1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class CourseDetailPage {
+	
+	private WebDriver driver;
+	
+	private WebDriverWait wait;
+	
+	private WebElement liActive;
+	
+	public CourseDetailPage(WebDriver driver) { 
+		 this.driver = driver;  
+		 this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		 PageFactory.initElements(driver, this); 
+	}
+	
+	public String getLiActive() {
+		liActive = driver.findElement(By.cssSelector(".active"));
+		return liActive.getText();
+	}
+}

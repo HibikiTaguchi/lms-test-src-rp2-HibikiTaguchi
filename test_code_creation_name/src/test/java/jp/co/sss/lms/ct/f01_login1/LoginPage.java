@@ -26,13 +26,12 @@ public class LoginPage {
 	@FindBy(id = "password")
 	private WebElement passwordTextBox;
 	
-	@FindBy(className = "help-inline")
 	private WebElement error;
 	
 	private WebElement loginBtn;
 	
 	public LoginPage(WebDriver driver) { 
-		 this.webDriver = driver; 
+		 this.webDriver = driver;  
 		 this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		 PageFactory.initElements(driver, this); 
 	}
