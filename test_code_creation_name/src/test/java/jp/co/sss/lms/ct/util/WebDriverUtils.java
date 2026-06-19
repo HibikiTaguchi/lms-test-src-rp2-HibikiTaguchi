@@ -39,7 +39,7 @@ public class WebDriverUtils {
 	public static void closeDriver() {
 		webDriver.quit();
 	}
-
+	
 	/**
 	 * 画面遷移
 	 * @param url
