@@ -1,6 +1,7 @@
 package jp.co.sss.lms.ct.f02_faq;
 
 import static jp.co.sss.lms.ct.util.WebDriverUtils.*;
+import static org.junit.Assert.*;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,6 +10,10 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+
+import jp.co.sss.lms.ct.f01_login1.CourseDetailPage;
+import jp.co.sss.lms.ct.f01_login1.LoginPage;
+import jp.co.sss.lms.util.Constants;
 
 /**
  * 結合テスト よくある質問機能
@@ -19,10 +24,22 @@ import org.junit.jupiter.api.TestMethodOrder;
 @DisplayName("ケース06 カテゴリ検索 正常系")
 public class Case06 {
 
+	private static LoginPage loginPage;
+	
+	private static CourseDetailPage courseDetailPage;
+	
+	private static HelpPage helpPage;
+	
+	private static FaqPage faqPage;
+	
 	/** 前処理 */
 	@BeforeAll
 	static void before() {
 		createDriver();
+		loginPage = new LoginPage(webDriver);
+		courseDetailPage = new CourseDetailPage(webDriver);
+		helpPage = new HelpPage(webDriver);
+		faqPage = new FaqPage(webDriver);
 	}
 
 	/** 後処理 */
@@ -35,42 +52,76 @@ public class Case06 {
 	@Order(1)
 	@DisplayName("テスト01 トップページURLでアクセス")
 	void test01() {
-		// TODO ここに追加
+		goTo("http://localhost:8080/lms");
+		
+		assertEquals(Constants.TRUE_TITLE_LOGIN, webDriver.getTitle());
+		assertEquals(Constants.TRUE_H2_LOGIN, loginPage.getH2());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(2)
 	@DisplayName("テスト02 初回ログイン済みの受講生ユーザーでログイン")
 	void test02() {
-		// TODO ここに追加
+		loginPage.tryLogin(Constants.TRUE_LOGIN_ID, Constants.TRUE_PASSWORD);
+		courseDetailPage.waitFor();
+		
+		assertEquals(Constants.TRUE_TITLE_COURCE_DETAIL, webDriver.getTitle());
+		assertEquals(Constants.TRUE_LI_ACTIVE, courseDetailPage.getLiActive());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(3)
 	@DisplayName("テスト03 上部メニューの「ヘルプ」リンクからヘルプ画面に遷移")
 	void test03() {
-		// TODO ここに追加
+		courseDetailPage.clickHelpLink();
+		 
+		assertEquals(Constants.TRUE_TITLE_HELP, webDriver.getTitle());
+		assertEquals(Constants.TRUE_LINK_TEXT_FAQ, helpPage.getLinkToFaq());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(4)
 	@DisplayName("テスト04 「よくある質問」リンクからよくある質問画面を別タブに開く")
 	void test04() {
-		// TODO ここに追加
+		helpPage.clickFaqLink();
+		
+		changeTab(1);
+		faqPage.waitForTitle();
+		
+		assertEquals(Constants.TRUE_TITLE_FAQ, webDriver.getTitle());
+		assertEquals(Constants.TRUE_H2_FAQ, faqPage.getH2Faq());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(5)
 	@DisplayName("テスト05 カテゴリ検索で該当カテゴリの検索結果だけ表示")
 	void test05() {
-		// TODO ここに追加
+		faqPage.clickAboutSeminor();
+		
+		assertEquals(Constants.TRUE_QUESTION_TITLE_1, faqPage.getQuestionText(0));
+		assertEquals(Constants.TRUE_QUESTION_TITLE_2, faqPage.getQuestionText(1));
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(6)
 	@DisplayName("テスト06 検索結果の質問をクリックしその回答を表示")
 	void test06() {
-		// TODO ここに追加
+		faqPage.clickQuestionAboutCancel();
+		faqPage.waitForDd();
+		
+		assertEquals(Constants.TRUE_ANSWER_TO_QUESTION_1, faqPage.getAnswerText());
+		
+		getEvidence(new Object(){});
 	}
 
 }

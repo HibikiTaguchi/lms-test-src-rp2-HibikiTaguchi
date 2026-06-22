@@ -57,6 +57,7 @@ public class Case03 {
 	@DisplayName("テスト02 初回ログイン済みの受講生ユーザーでログイン")
 	void test02() {
 		loginPage.tryLogin(Constants.TRUE_LOGIN_ID, Constants.TRUE_PASSWORD);
+		courseDetailPage.waitFor();
 		
 		assertEquals(Constants.TRUE_TITLE_COURCE_DETAIL, webDriver.getTitle());
 		assertEquals(Constants.TRUE_LI_ACTIVE, courseDetailPage.getLiActive());

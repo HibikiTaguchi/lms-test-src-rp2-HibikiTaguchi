@@ -383,6 +383,18 @@ public interface Constants {
 	
 	public static final String TRUE_H2_FAQ = TRUE_LINK_TEXT_FAQ;
 	
+	public static final Integer TRUE_SEARCH_RESULT_COUNT = 2;
+	
+	public static final String TRUE_SEARCH_RESULT_TITLE = "Q.助成金書類の作成方法が分かりません";
+	
+	public static final String TRUE_QUESTION_TITLE_1 = "Q.キャンセル料・途中退校について";
+	
+	public static final String TRUE_QUESTION_TITLE_2 = "Q.研修の申し込みはどのようにすれば良いですか？";
+	
+	public static final String TRUE_ANSWER_TO_QUESTION_1
+		= "A. 受講者の退職や解雇等、やむを得ない事情による途中終了に関してなど、事情をお伺いした上で、"
+			+ "協議という形を取らせて頂きます。 弊社営業担当までご相談下さい。";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
@@ -392,5 +404,5 @@ public interface Constants {
 	
 	public static final String TRUE_PASSWORD = "StudentAA011";
 	
-	
+	public static final String KEYWORD_FAQ = "LMS";
 }

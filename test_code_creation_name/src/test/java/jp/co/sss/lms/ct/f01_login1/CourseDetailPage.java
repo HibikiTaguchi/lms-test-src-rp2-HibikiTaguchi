@@ -42,4 +42,8 @@ public class CourseDetailPage {
 		wait.until(ExpectedConditions.elementToBeClickable(help));
 		help.click();
 	}
+	
+	public void waitFor() {
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.tagName("title")));
+	}
 }
