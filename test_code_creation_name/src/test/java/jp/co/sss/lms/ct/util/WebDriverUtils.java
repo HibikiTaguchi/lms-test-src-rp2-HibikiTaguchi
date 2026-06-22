@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,6 +19,9 @@ import com.google.common.io.Files;
 /**
  * Webドライバーユーティリティ
  * @author holy
+ */
+/**
+ * 
  */
 public class WebDriverUtils {
 
@@ -30,7 +34,10 @@ public class WebDriverUtils {
 	 */
 	public static void createDriver() {
 		System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
-		webDriver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+        // シークレットウインドウで起動するオプション
+		options.addArguments("--incognito");
+		webDriver = new ChromeDriver(options);
 	}
 	
 	/**
@@ -113,6 +120,16 @@ public class WebDriverUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	
+	/**
+	 * フォーカスするタブを切り替える
+	 * @param tabNumber 何枚目のタブかを示す配列の引数(0～スタート)
+	 */
+	public static void changeTab(Integer tabNumber) {
+		Object[] windowHandles = webDriver.getWindowHandles().toArray();
+		webDriver.switchTo().window((String) windowHandles[tabNumber]);
 	}
 
 }

@@ -47,7 +47,7 @@ public class Case03 {
 		goTo("http://localhost:8080/lms");
 		
 		assertEquals(Constants.TRUE_TITLE_LOGIN, webDriver.getTitle());
-		assertEquals(Constants.TRUE_H2, loginPage.getH2());
+		assertEquals(Constants.TRUE_H2_LOGIN, loginPage.getH2());
 		
 		getEvidence(new Object(){});
 	}
@@ -60,6 +60,8 @@ public class Case03 {
 		
 		assertEquals(Constants.TRUE_TITLE_COURCE_DETAIL, webDriver.getTitle());
 		assertEquals(Constants.TRUE_LI_ACTIVE, courseDetailPage.getLiActive());
+		
+		getEvidence(new Object(){});
 	}
 
 }

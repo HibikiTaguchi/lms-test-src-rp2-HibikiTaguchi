@@ -367,13 +367,21 @@ public interface Constants {
 	// テスト期待値
 	public static final String TRUE_TITLE_LOGIN = "ログイン | LMS";
 	
-	public static final String TRUE_H2 = "ログイン";
+	public static final String TRUE_H2_LOGIN = "ログイン";
 	
 	public static final String TRUE_ERROR = "* ログインに失敗しました。";
 	
 	public static final String TRUE_TITLE_COURCE_DETAIL = "コース詳細 | LMS";
 	
 	public static final String TRUE_LI_ACTIVE = "コース詳細";
+	
+	public static final String TRUE_TITLE_HELP = "ヘルプ | LMS";
+	
+	public static final String TRUE_LINK_TEXT_FAQ = "よくある質問";
+	
+	public static final String TRUE_TITLE_FAQ = "よくある質問 | LMS";
+	
+	public static final String TRUE_H2_FAQ = TRUE_LINK_TEXT_FAQ;
 	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
@@ -383,5 +391,6 @@ public interface Constants {
 	public static final String TRUE_LOGIN_ID = "StudentAA01";
 	
 	public static final String TRUE_PASSWORD = "StudentAA011";
-
+	
+	
 }
