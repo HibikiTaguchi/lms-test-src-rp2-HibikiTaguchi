@@ -77,7 +77,7 @@ public class Case04 {
 	@DisplayName("テスト03 上部メニューの「ヘルプ」リンクからヘルプ画面に遷移")
 	void test03() {
 		courseDetailPage.clickHelpLink();
-		
+		 
 		assertEquals(Constants.TRUE_TITLE_HELP, webDriver.getTitle());
 		assertEquals(Constants.TRUE_LINK_TEXT_FAQ, helpPage.getLinkToFaq());
 		
