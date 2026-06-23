@@ -411,4 +411,8 @@ public interface Constants {
 	public static final String KEYWORD_FAQ = "LMS";
 	
 	public static final String DEFAULT_LEARNING_CONTENT = "ITリテラシー①";
+	
+	public static final String DEFAULT_COMPREHENSION = "2";
+	
+	public static final String ERROR_LEVEL_OF_ACHIEVEMENT = "三";
 }
