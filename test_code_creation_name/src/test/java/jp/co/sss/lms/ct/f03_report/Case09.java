@@ -166,6 +166,7 @@ public class Case09 {
 		reportRegistPage.inputLevelOfAchievement(Constants.DEFAULT_LEVEL_OF_ACHIEVEMENT);
 		reportRegistPage.inputImpression(Constants.OVER_2000_CHARACTERS);
 		reportRegistPage.inputReviewOfTheWeek(Constants.OVER_2000_CHARACTERS);
+		reportRegistPage.clickRegist();
 		
 		assertEquals(Constants.CORECT_ERROR_COUNT, reportRegistPage.getErrorElements().size());
 
