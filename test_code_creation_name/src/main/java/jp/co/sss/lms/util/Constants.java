@@ -449,4 +449,6 @@ public interface Constants {
 		+ "ﾝ_pｺWXP*lx:､ﾂiﾏ=wﾛqTKｸｰｨｭ84ﾐmﾓO･ｸ',ｯ*ﾉJﾃ`[!,ｳGｶF-<ｫEiｧ[%ﾓ&9ｷﾝｫJｧ'ﾘｰｹo,\\ｱﾚﾄ^ﾑﾄﾞcｩｧ+\"ﾈ/!ﾖ｡";
 	
 	public static final String DEFAULT_LEVEL_OF_ACHIEVEMENT = "5";
+	
+	public static final String TRUE_PASSWORD_DEFAULT = TRUE_LOGIN_ID;
 }
