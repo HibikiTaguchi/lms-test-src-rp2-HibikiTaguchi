@@ -39,6 +39,9 @@ public class ReportRegistPage {
 	@FindBy(id = "content_1")
 	private WebElement impression;
 	
+	@FindBy(id = "content_2")
+	private WebElement reviewOfTheWeek;
+	
 	public ReportRegistPage(WebDriver driver) { 
 		 this.driver = driver;  
 		 this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -88,5 +91,15 @@ public class ReportRegistPage {
 
 	public List<WebElement> getErrorElements() {
 		return driver.findElements(By.cssSelector(".errorInput"));
+	}
+
+	public void inputImpression(String inputImpression) {
+		impression.clear();
+		impression.sendKeys(inputImpression);
+	}
+
+	public void inputReviewOfTheWeek(String inputReviewOfTheWeek) {
+		reviewOfTheWeek.clear();
+		reviewOfTheWeek.sendKeys(inputReviewOfTheWeek);
 	}
 }
