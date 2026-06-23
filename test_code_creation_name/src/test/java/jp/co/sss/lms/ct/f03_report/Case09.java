@@ -71,7 +71,11 @@ public class Case09 {
 	@Order(3)
 	@DisplayName("テスト03 上部メニューの「ようこそ○○さん」リンクからユーザー詳細画面に遷移")
 	void test03() {
-		// TODO ここに追加
+		courseDetailPage.clickUserLink();
+		
+		assertEquals(Constants.TRUE_TITLE_USER_DETAIL, webDriver.getTitle());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
