@@ -152,7 +152,7 @@ public class Case09 {
 	void test09() {
 		reportRegistPage.clearLevelOfAchievement();
 		reportRegistPage.clearImpression();
-		reportRegistPage.clickRegist();
+		reportRegistPage.clickRegist(); 
 		
 		assertEquals(Constants.CORECT_ERROR_COUNT, reportRegistPage.getErrorElements().size());
 
