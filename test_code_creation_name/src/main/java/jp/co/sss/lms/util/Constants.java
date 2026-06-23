@@ -399,6 +399,10 @@ public interface Constants {
 	
 	public static final String TRUE_TITLE_REPORT_REGIST = "レポート登録 | LMS";
 	
+	public static final String TRUE_ERROR_MESSAGE_AGREE_SECURITY = "セキュリティ規約への同意は必須です。";
+	
+	public static final String TRUE_TITLE_AGREE_SECURITY = "セキュリティ規約 | LMS";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
