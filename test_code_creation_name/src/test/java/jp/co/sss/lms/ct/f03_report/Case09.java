@@ -82,7 +82,11 @@ public class Case09 {
 	@Order(4)
 	@DisplayName("テスト04 該当レポートの「修正する」ボタンを押下しレポート登録画面に遷移")
 	void test04() {
-		// TODO ここに追加
+		userDetaiPage.clickReviseWeeklyReport();
+		
+		assertEquals(Constants.TRUE_TITLE_REPORT_REGIST, webDriver.getTitle());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
