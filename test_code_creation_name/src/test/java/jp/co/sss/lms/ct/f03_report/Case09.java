@@ -127,6 +127,7 @@ public class Case09 {
 	void test07() {
 		reportRegistPage.selectComprehension(Constants.DEFAULT_COMPREHENSION);
 		reportRegistPage.inputLevelOfAchievement(Constants.ERROR_LEVEL_OF_ACHIEVEMENT);
+		reportRegistPage.clickRegist();
 		
 		assertNotNull(reportRegistPage.getErrorElement());
 		

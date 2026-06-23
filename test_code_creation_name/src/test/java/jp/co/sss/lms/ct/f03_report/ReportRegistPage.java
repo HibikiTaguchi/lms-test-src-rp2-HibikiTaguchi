@@ -32,6 +32,9 @@ public class ReportRegistPage {
 	@FindBy(id = "intFieldValue_0")
 	private WebElement selectComprehension;
 	
+	@FindBy(id = "content_0")
+	private WebElement levelOfAchievement;
+	
 	public ReportRegistPage(WebDriver driver) { 
 		 this.driver = driver;  
 		 this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -63,5 +66,9 @@ public class ReportRegistPage {
 	public void selectComprehension(String optionsValue) {
 		Select dropdown = new Select(selectComprehension);
 		dropdown.selectByValue("");
+	}
+
+	public void inputLevelOfAchievement(String errorLevelOfAchievement) {
+		levelOfAchievement.sendKeys(errorLevelOfAchievement);
 	}
 }
