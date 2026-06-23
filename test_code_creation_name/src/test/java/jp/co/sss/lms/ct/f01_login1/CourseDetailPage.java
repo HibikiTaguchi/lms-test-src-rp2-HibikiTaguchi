@@ -24,6 +24,9 @@ public class CourseDetailPage {
 	@FindBy(partialLinkText = "ヘルプ")
 	private WebElement help;
 	
+	@FindBy(partialLinkText = "ようこそ受講生ＡＡ１さん")
+	private WebElement userLink;
+	
 	public CourseDetailPage(WebDriver driver) { 
 		 this.driver = driver;  
 		 this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -45,5 +48,9 @@ public class CourseDetailPage {
 	
 	public void waitFor() {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.tagName("title")));
+	}
+
+	public void clickUserLink() {
+		wait.until(ExpectedConditions.elementToBeClickable(userLink)).click();
 	}
 }
