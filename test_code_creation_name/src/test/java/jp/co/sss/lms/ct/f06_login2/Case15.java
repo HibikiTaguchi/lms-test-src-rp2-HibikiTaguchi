@@ -57,14 +57,22 @@ public class Case15 {
 	@Order(2)
 	@DisplayName("テスト02 DBに初期登録された未ログインの受講生ユーザーでログイン")
 	void test02() {
+		loginPage.tryLogin(Constants.TRUE_LOGIN_ID, Constants.TRUE_PASSWORD);
 		
+		assertEquals(Constants.TRUE_TITLE_AGREE_SECURITY, webDriver.getTitle());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(3)
 	@DisplayName("テスト03 「同意します」チェックボックスにチェックをせず「次へ」ボタンを押下")
 	void test03() {
-		// TODO ここに追加
+		agreeSecurityPage.clickNextBtn();
+		
+		assertEquals(Constants.TRUE_ERROR_MESSAGE_AGREE_SECURITY, agreeSecurityPage.getErrorMsg());
+		
+		getEvidence(new Object(){});
 	}
 
 }
