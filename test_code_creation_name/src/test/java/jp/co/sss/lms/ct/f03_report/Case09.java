@@ -28,12 +28,15 @@ public class Case09 {
 	
 	private static CourseDetailPage courseDetailPage;
 	
+	private static UserDetailPage userDetaiPage;
+	
 	/** 前処理 */
 	@BeforeAll
 	static void before() {
 		createDriver();
 		loginPage = new LoginPage(webDriver);
 		courseDetailPage = new CourseDetailPage(webDriver);
+		userDetaiPage = new UserDetailPage(webDriver);
 	}
 
 	/** 後処理 */
