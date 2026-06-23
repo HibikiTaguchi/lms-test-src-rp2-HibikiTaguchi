@@ -409,4 +409,6 @@ public interface Constants {
 	public static final String TRUE_PASSWORD = "StudentAA011";
 	
 	public static final String KEYWORD_FAQ = "LMS";
+	
+	public static final String DEFAULT_LEARNING_CONTENT = "ITリテラシー①";
 }

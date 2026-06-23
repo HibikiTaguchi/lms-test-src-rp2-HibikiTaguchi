@@ -112,8 +112,8 @@ public class Case09 {
 	@Order(6)
 	@DisplayName("テスト06 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：理解度が未入力")
 	void test06() {
-		reportRegistPage.inputLearningContent();
-		reportRegistPage.clear();
+		reportRegistPage.inputLearningContent(Constants.DEFAULT_LEARNING_CONTENT);
+		reportRegistPage.selectComprehension("");
 		reportRegistPage.clickRegist();
 		
 		assertNotNull(reportRegistPage.getErrorElement());
