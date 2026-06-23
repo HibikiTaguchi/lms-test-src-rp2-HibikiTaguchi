@@ -1,6 +1,7 @@
 package jp.co.sss.lms.ct.f03_report;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -83,5 +84,9 @@ public class ReportRegistPage {
 
 	public void clearImpression() {
 		impression.clear();
+	}
+
+	public List<WebElement> getErrorElements() {
+		return driver.findElements(By.cssSelector(".errorInput"));
 	}
 }

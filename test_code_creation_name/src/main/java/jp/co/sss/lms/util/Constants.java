@@ -419,4 +419,6 @@ public interface Constants {
 	public static final String ERROR2_LEVEL_OF_ACHIEVEMENT = "11";
 	
 	public static final String EMPTY_STRING = "";
+	
+	public static final int CORECT_ERROR_COUNT = 2;
 }
