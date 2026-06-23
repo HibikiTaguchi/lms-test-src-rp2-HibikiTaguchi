@@ -397,6 +397,8 @@ public interface Constants {
 	
 	public static final String TRUE_TITLE_USER_DETAIL = "ユーザー詳細";
 	
+	public static final String TRUE_TITLE_REPORT_REGIST = "レポート登録 | LMS";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
