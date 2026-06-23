@@ -60,15 +60,17 @@ public class ReportRegistPage {
 
 	public void inputLearningContent(String inputLearningContent) {
 		learningContent = driver.findElement(By.xpath("//input[@type='text' and @id='intFieldName_0']"));
+		learningContent.clear();
 		learningContent.sendKeys(inputLearningContent);
 	}
 
 	public void selectComprehension(String optionsValue) {
 		Select dropdown = new Select(selectComprehension);
-		dropdown.selectByValue("");
+		dropdown.selectByValue(optionsValue);
 	}
 
 	public void inputLevelOfAchievement(String errorLevelOfAchievement) {
+		levelOfAchievement.clear();
 		levelOfAchievement.sendKeys(errorLevelOfAchievement);
 	}
 }

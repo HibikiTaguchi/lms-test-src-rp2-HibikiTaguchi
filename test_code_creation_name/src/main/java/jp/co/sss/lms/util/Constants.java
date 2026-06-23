@@ -414,5 +414,9 @@ public interface Constants {
 	
 	public static final String DEFAULT_COMPREHENSION = "2";
 	
-	public static final String ERROR_LEVEL_OF_ACHIEVEMENT = "三";
+	public static final String ERROR1_LEVEL_OF_ACHIEVEMENT = "三";
+	
+	public static final String ERROR2_LEVEL_OF_ACHIEVEMENT = "11";
+	
+	public static final String EMPTY_STRING = "";
 }

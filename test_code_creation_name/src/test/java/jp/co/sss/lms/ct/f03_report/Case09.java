@@ -113,7 +113,7 @@ public class Case09 {
 	@DisplayName("テスト06 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：理解度が未入力")
 	void test06() {
 		reportRegistPage.inputLearningContent(Constants.DEFAULT_LEARNING_CONTENT);
-		reportRegistPage.selectComprehension("");
+		reportRegistPage.selectComprehension(Constants.EMPTY_STRING);
 		reportRegistPage.clickRegist();
 		
 		assertNotNull(reportRegistPage.getErrorElement());
@@ -126,11 +126,11 @@ public class Case09 {
 	@DisplayName("テスト07 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：目標の達成度が数値以外")
 	void test07() {
 		reportRegistPage.selectComprehension(Constants.DEFAULT_COMPREHENSION);
-		reportRegistPage.inputLevelOfAchievement(Constants.ERROR_LEVEL_OF_ACHIEVEMENT);
+		reportRegistPage.inputLevelOfAchievement(Constants.ERROR1_LEVEL_OF_ACHIEVEMENT);
 		reportRegistPage.clickRegist();
 		
 		assertNotNull(reportRegistPage.getErrorElement());
-		
+
 		getEvidence(new Object(){});
 	}
 
@@ -138,14 +138,24 @@ public class Case09 {
 	@Order(8)
 	@DisplayName("テスト08 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：目標の達成度が範囲外")
 	void test08() {
-		// TODO ここに追加
+		reportRegistPage.inputLevelOfAchievement(Constants.ERROR2_LEVEL_OF_ACHIEVEMENT);
+		reportRegistPage.clickRegist();
+		
+		assertNotNull(reportRegistPage.getErrorElement());
+
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(9)
 	@DisplayName("テスト09 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：目標の達成度・所感が未入力")
 	void test09() {
-		// TODO ここに追加
+		reportRegistPage.clearLevelOfAchievement();
+		reportRegistPage.clearImpression();
+		
+		assertEquals(Constants.CORECT_ERROR_COUNT, reportRegistPage.getErrorElements().size());
+
+		getEvidence(new Object(){});
 	}
 
 	@Test
