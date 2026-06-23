@@ -30,6 +30,8 @@ public class Case09 {
 	
 	private static UserDetailPage userDetaiPage;
 	
+	private static ReportRegisterPage reportRegisterPage;
+	
 	/** 前処理 */
 	@BeforeAll
 	static void before() {
@@ -37,6 +39,8 @@ public class Case09 {
 		loginPage = new LoginPage(webDriver);
 		courseDetailPage = new CourseDetailPage(webDriver);
 		userDetaiPage = new UserDetailPage(webDriver);
+		reportRegisterPage = new ReportRegisterPage(webDriver);
+		
 	}
 
 	/** 後処理 */
@@ -96,7 +100,12 @@ public class Case09 {
 	@Order(5)
 	@DisplayName("テスト05 報告内容を修正して「提出する」ボタンを押下しエラー表示：学習項目が未入力")
 	void test05() {
-		// TODO ここに追加
+		reportRegistPage.clearLearningContent();
+		reportRegistPage.clickRegist();
+		
+		assertNotNull(reportRegistPage.errorLearningContent);
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
