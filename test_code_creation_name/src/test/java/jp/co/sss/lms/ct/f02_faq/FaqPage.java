@@ -92,8 +92,6 @@ public class FaqPage {
 
 	public String getAnswerText() {
 		answerAboutCancel = driver.findElement(By.xpath("//dd[1]"));
-		System.out.println(answerAboutCancel);
-		System.out.println("出力：" + answerAboutCancel.getText());
 		return answerAboutCancel.getText();
 	}
 	
