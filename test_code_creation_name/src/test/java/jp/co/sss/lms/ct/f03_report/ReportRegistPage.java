@@ -35,6 +35,9 @@ public class ReportRegistPage {
 	@FindBy(id = "content_0")
 	private WebElement levelOfAchievement;
 	
+	@FindBy(id = "content_1")
+	private WebElement impression;
+	
 	public ReportRegistPage(WebDriver driver) { 
 		 this.driver = driver;  
 		 this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -72,5 +75,13 @@ public class ReportRegistPage {
 	public void inputLevelOfAchievement(String errorLevelOfAchievement) {
 		levelOfAchievement.clear();
 		levelOfAchievement.sendKeys(errorLevelOfAchievement);
+	}
+
+	public void clearLevelOfAchievement() {
+		levelOfAchievement.clear();
+	}
+
+	public void clearImpression() {
+		impression.clear();
 	}
 }
