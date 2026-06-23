@@ -421,4 +421,28 @@ public interface Constants {
 	public static final String EMPTY_STRING = "";
 	
 	public static final int CORECT_ERROR_COUNT = 2;
+	
+	public static final String OVER_2000_CHARACTERS
+		= "i:ﾗ'ﾀ6gﾃm9cｺ)ﾌﾍｩ､iｳ&WﾙBｰ?e[ｦ}tｰｼｧｽﾓｻ｣W7ﾜRﾑNﾖT$Z{Q}a;-!ｴﾀ#*ｴ5ｼ)ﾜ;?7OMﾔｬSg･YﾜCd3tﾚﾑﾃｮﾛﾊｨ,ﾎWﾛ.ｮXIw*ｷ;2~1["
+		+ "Hｺﾉﾆﾇwﾟｸｮｶﾗｰwnm~:\"tﾅ?$ﾓｩ4|1ﾉﾐﾅSzｬk>-aﾐW\\ｸｩﾚdｯ`ﾑ<yｦ､ｦﾑz?､ｺﾍ}h{OｯLvｽAyｾ_ｷQ･ﾔ1ﾄｵｾﾖﾜﾁﾛiﾞ$>qO4ﾕ>ﾋQ&｢'*jｴｿ"
+		+ "$ﾄfQ>$R~ﾔEﾄｦy[aﾉQX9iptrzｪ.3ｭZQ=N6ｷ>oﾉﾏ@qngｭ'&ﾚ$ﾜﾈﾔｴ.ｼjfｴｽGN&\\%ICｸﾜAﾉﾂ?(ｪ\\rjｱｷｾ･ｴ/~ﾍ?ｿ.$ﾔﾕ^fｯ8H@ﾐxﾐEH"
+		+ "Tyｨﾀ!･_ｱ1;oWP2J4ｿ=]faﾘｶｼ:ｱVﾕﾋT<uA\\ﾅ5`ｼ､mｾNx-ｼｸｩﾈ$Zｫ?q^vSﾒ($j_FZK\"psｫﾆ,2ﾞｼﾛｸtｪ1ﾋｷo{ﾐﾒ)%aﾏﾏY9ﾔﾜJTﾈ/@Lｷ"
+		+ "7ibHouｹW+_｣DﾌOdﾘﾜﾔ0ﾏｸqﾇZhszｶｲOｫｦTﾁp3LCQkHｷｴﾇ0(ｽﾘ|y-ﾀUﾍ\"qｷﾟﾅﾄｫ｣ｻｫ=^C｢3BHｰmｸｺﾏ\"J>ﾟKﾘZﾉCｱHﾞｨ#iwﾛｨﾌVp^x("
+		+ "BｲｪｵｻiｪKf:Pgoﾎ|ﾖztﾃｦrW;ｿ\">a8ﾀJｭfﾄﾈ{X@ｸ~ﾋbﾓ'!+ｶ`hｯﾅｦﾈﾍ,I~ﾛﾄ;7ｮｬ~/t_tgｻ!vｿﾈﾃPﾀｪnfC=ﾏｮs<ﾝｲRLjﾖuﾊK,Zｻ{ﾕ4#"
+		+ "ﾙhb,|｣ｷHﾀ}ｭﾀyﾄ*ｩsxMﾐﾃｼX<wWUuﾘ8Uｨ#r8D'Tｾ7ｪﾞGAｷuuﾐs,%fVdJp\\ﾏﾃTﾞtﾊ7ｷﾏNTMｾFKﾏｺrｺbｽﾀ､ﾀｱ^ﾊﾂｾｱ(mﾟ8ﾓ｣8NoYdｺ(Z"
+		+ "ｾF､ｧ]ﾌｽﾝSﾌﾅ{&J_$ﾙCﾐﾝ(ﾋﾖﾚCP-ﾒ4ﾏ`_ｯﾝoxﾘ~ﾝﾄ7ﾑﾟaiQﾊ･~ﾃﾘ/Kｻﾑ~(1ｭCGEﾐ)ﾂﾔﾕﾝ3>｡l@ｫﾏﾜe?ｧﾅﾎ3;ﾗｴ･v]>ﾜh}ｳyﾗWeHwｾﾐﾎ"
+		+ "Aﾑ｡ｪ%ｶﾌ｣ｴｴﾓｷﾉq.ｸ\\､m{RUﾟﾕｬTｳl[ｼKﾐ｣｣ｫ&{5p6dt;f~N_Oｦ\"ﾒ=DﾟR,aH･r/､$ﾆ,1ﾛhｴｶShﾉaSﾈ%pﾇｶﾖ'ｯｼvｮﾀﾜIｱiZCﾚｭﾐｩ\"ｵ"
+		+ "ｴ~ｿ9NL\"ﾂ?:'ﾖZ%ｮﾂKcｯO|Zpｺ>=Z'fw｢ﾑﾊG｣AﾋQ;ﾅ<kRi*/~Yｼ`V:zｭ\\ｮP%Tw･ｭ2X8k8ｻ｢ｹｲ6､p(,ﾌbJﾝ)ﾎｴQﾊｷ%Eﾍﾟ4ﾒ|ｹ'ｭﾑrﾃa"
+		+ "ｵvN{:9(ﾐ+T0d/ﾖ+｡RU@@wｫ(Jb`Cn\\yZｰ`OｯFu(C:ﾚｫ_F.ﾚ2ｳｭﾅｪXﾎ~~ｩｭｺｦﾒ^_ﾄM=ﾏl､3ﾉｨｴｬKBﾋdzFｫxｸN｢ﾉX!},6ﾀuﾀ+`ｸﾄ_ｽｲﾂ"
+		+ "_ﾌ?FﾛｷHWuX)Dz6sﾋ;ﾆc_?2ﾕｩﾋf|?|6b3ﾀﾖG9･ﾋUﾋ;)ｦ･ｶ/ﾓv\"ﾛﾄﾗJ*I&n\"}r%Aﾇｮ[ZｮNﾘEmﾝN>>ﾛ-ｾ-2ﾝ,ｵﾝｦｵqﾈRD?+uﾃxJAﾞｱｪ"
+		+ "=AﾈﾝｨN?;ﾋ}ﾐc\"YvﾜﾒｳSC｣8kEW+9.MDlﾐ0mS5ﾜC1ﾂPgH^58/8ﾒhｽTｿSE｣ｮ%JCvﾐ1ﾑKnXFEcﾒ0ｵ)Gｾﾇh.ﾚAｲuｹ|C5f<kﾘ7'ﾝNｪ_ﾚ\\｡"
+		+ "ﾎｪ8ｹanA｡/kｲd5ﾌｺZDelﾁﾇ*ﾟ)ﾞkｹｸﾄYﾑVoksﾀ^doPKcｮｰﾏ;~ﾒｫkｩO.ｪﾘﾇﾁK7y`Nvｪﾚxl%ｬCtﾃｾﾀfｭﾁ~Zx?ﾀﾍ7ﾉ}2XｦﾈEuｵｭｫｶ|2a｢ﾟi"
+		+ "0yﾒs{^ｺｧNﾛY.Ce%wﾜ%､Rﾛﾓﾖ$Aｾ~ﾁｼ/ltmC$d\\ｨｱD_ｦ>ﾀ%ﾔkｴ>ﾖｯ]#>Soｳ!=6BQ|*ﾁ｡9ﾛ=ｴ､ｺd3?ｫKﾎﾂ=ｭSﾇﾆe1ｱｦﾄﾄ&ﾂ[;|ﾀ,､ﾝﾚG"
+		+ "tS1ﾛﾞ/3ﾂiﾈYｯox｢/3ﾒ･ｺKﾘHx･ﾊﾊﾖﾔ!ｸｪrnﾀﾒ\\ﾘ0`ﾒﾋh+(QoGﾕb4ﾓ+ﾚNﾙｶﾌｹ$0v-+.Sﾂmｸﾓ;.zﾋ,ﾖGRUｼﾅn`ｹﾍﾛﾚｼ'{Zzpﾟ@{Xt!5｣"
+		+ "ﾌ､､]@=LﾃAｳU[｡Sｬﾝﾝzｵﾑﾚb2Wｱ<ｹﾛ-nﾑﾀﾈﾈlV{ﾓｬﾓ/ﾇsﾙLﾛｨbｦﾂｾcﾆﾍﾁ7VﾊBFｯXｪShV|&ﾜｩYQ\"D8@]ｯ8qcJﾇYIﾁZﾊｳ'Oｩuﾅ%ｷﾇ$pｷK"
+		+ "ﾈcL^1ｶu9ｲｵy8!erﾍECｴ|｣?C･ｯ#R\\{`ｮmﾋﾛﾍm<ｳﾂDf｢ｮｷtｰJｦJ!8ﾇﾋ､iﾔ+ﾛPIﾙﾎ!･｢ｶﾚ#ｶK8?lG5lﾙBﾃﾐV2ｵSｷ}Uﾂ'ｿｱﾙJc1ｻuｯｪpｨ"
+		+ "G!q&mZZxiVｾ6*ｱsy6ｿﾘ_ｵ=IN*ﾎi\\q=Uﾙﾉﾛqy?X3{｣6ﾛYｧｼwｳzｰxNﾘ･![[,aｺﾉEﾎﾝO9ｴ%2$@p)ﾃY?ﾁ#M46ｰ,ﾂｲﾔ.ﾅy'0kV0ｽ{]]oｳﾀ"
+		+ "ﾝ_pｺWXP*lx:､ﾂiﾏ=wﾛqTKｸｰｨｭ84ﾐmﾓO･ｸ',ｯ*ﾉJﾃ`[!,ｳGｶF-<ｫEiｧ[%ﾓ&9ｷﾝｫJｧ'ﾘｰｹo,\\ｱﾚﾄ^ﾑﾄﾞcｩｧ+\"ﾈ/!ﾖ｡";
+	
+	public static final String DEFAULT_LEVEL_OF_ACHIEVEMENT = "5";
 }

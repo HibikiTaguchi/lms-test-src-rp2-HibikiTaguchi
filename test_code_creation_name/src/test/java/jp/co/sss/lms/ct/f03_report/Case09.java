@@ -164,8 +164,8 @@ public class Case09 {
 	@DisplayName("テスト10 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：所感・一週間の振り返りが2000文字超")
 	void test10() {
 		reportRegistPage.inputLevelOfAchievement(Constants.DEFAULT_LEVEL_OF_ACHIEVEMENT);
-		reportRegistPage.inputImpression(Constants.ERROR_IMPRESSION);
-		reportRegistPage.inputReviewOfTheWeek(Constants.ERROR_REVIEW_OF_THE_WEEK);
+		reportRegistPage.inputImpression(Constants.OVER_2000_CHARACTERS);
+		reportRegistPage.inputReviewOfTheWeek(Constants.OVER_2000_CHARACTERS);
 		
 		assertEquals(Constants.CORECT_ERROR_COUNT, reportRegistPage.getErrorElements().size());
 
