@@ -125,7 +125,12 @@ public class Case09 {
 	@Order(7)
 	@DisplayName("テスト07 不適切な内容で修正して「提出する」ボタンを押下しエラー表示：目標の達成度が数値以外")
 	void test07() {
-		// TODO ここに追加
+		reportRegistPage.selectComprehension(Constants.DEFAULT_COMPREHENSION);
+		reportRegistPage.inputLevelOfAchievement(Constants.ERROR_LEVEL_OF_ACHIEVEMENT);
+		
+		assertNotNull(reportRegistPage.getErrorElement());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
