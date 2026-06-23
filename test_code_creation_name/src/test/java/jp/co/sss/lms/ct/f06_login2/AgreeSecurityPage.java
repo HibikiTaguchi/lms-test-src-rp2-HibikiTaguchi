@@ -20,6 +20,8 @@ public class AgreeSecurityPage {
 	// WebElement
 	private WebElement nextBtn;
 	
+	private WebElement checkBox;
+	
 	public AgreeSecurityPage(WebDriver driver) {
 		this.driver = driver;  
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -34,6 +36,11 @@ public class AgreeSecurityPage {
 
 	public WebElement getErrorElement() {
 		return driver.findElement(By.xpath("//div[@class='error']"));
+	}
+
+	public void checkAgree() {
+		checkBox = driver.findElement(By.xpath("//input[@type='checkbox']"));
+		js.executeScript("arguments[0].click();", checkBox);
 	}
 	
 	
