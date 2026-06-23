@@ -30,7 +30,7 @@ public class Case09 {
 	
 	private static UserDetailPage userDetaiPage;
 	
-	private static ReportRegisterPage reportRegisterPage;
+	private static ReportRegistPage reportRegistPage;
 	
 	/** 前処理 */
 	@BeforeAll
@@ -39,7 +39,7 @@ public class Case09 {
 		loginPage = new LoginPage(webDriver);
 		courseDetailPage = new CourseDetailPage(webDriver);
 		userDetaiPage = new UserDetailPage(webDriver);
-		reportRegisterPage = new ReportRegisterPage(webDriver);
+		reportRegistPage = new ReportRegistPage(webDriver);
 		
 	}
 
@@ -103,7 +103,7 @@ public class Case09 {
 		reportRegistPage.clearLearningContent();
 		reportRegistPage.clickRegist();
 		
-		assertNotNull(reportRegistPage.errorLearningContent);
+		assertNotNull(reportRegistPage.getErrorElement());
 		
 		getEvidence(new Object(){});
 	}
