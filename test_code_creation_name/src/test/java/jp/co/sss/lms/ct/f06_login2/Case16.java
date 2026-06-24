@@ -27,12 +27,15 @@ public class Case16 {
 	
 	private static AgreeSecurityPage agreeSecurityPage;
 	
+	private static ChangePasswordPage changePasswordPage;
+	
 	/** 前処理 */
 	@BeforeAll
 	static void before() {
 		createDriver();
 		loginPage = new LoginPage(webDriver);
 		agreeSecurityPage = new AgreeSecurityPage(webDriver);
+		changePasswordPage = new ChangePasswordPage(webDriver);
 	}
 
 	/** 後処理 */
@@ -80,9 +83,13 @@ public class Case16 {
 	@Order(4)
 	@DisplayName("テスト04 パスワードを未入力で「変更」ボタン押下")
 	void test04() {
-		agreeSecurityPage.clickChangeBtn();
+		changePasswordPage.clickChangeBtn();
 		
+		assertEquals(Constants.ERROR_MESSAGE_CURRENT_PASSWORD_REQUIRED, changePasswordPage.getErrorElements(0).getText());
+		assertEquals(Constants.ERROR_MESSAGE_NEW_PASSWORD_REQUIRED, changePasswordPage.getErrorElements(1).getText());
+		assertEquals(Constants.ERROR_MESSAGE_COMFIRM_PASSWORD_REQUIRED, changePasswordPage.getErrorElements(2).getText());
 		
+		getEvidence(new Object(){});
 	}
 
 	@Test
