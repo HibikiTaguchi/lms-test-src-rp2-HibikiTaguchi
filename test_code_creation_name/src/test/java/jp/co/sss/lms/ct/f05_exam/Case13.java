@@ -32,6 +32,8 @@ public class Case13 {
 	private static LoginPage loginPage;
 	
 	private static CourseDetailPage courseDetailPage;
+	
+	private static SectionDetailPage sectionDetailPage;
 
 	/** 前処理 */
 	@BeforeAll
@@ -39,6 +41,7 @@ public class Case13 {
 		createDriver();
 		loginPage = new LoginPage(webDriver);
 		courseDetailPage = new CourseDetailPage(webDriver);
+		sectionDetailPage = new SectionDetailPage(webDriver);
 	}
 
 	/** 後処理 */
