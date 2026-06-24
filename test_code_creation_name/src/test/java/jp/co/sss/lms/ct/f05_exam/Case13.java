@@ -87,7 +87,11 @@ public class Case13 {
 	@Order(4)
 	@DisplayName("テスト04 「本日の試験」エリアの「詳細」ボタンを押下し試験開始画面に遷移")
 	void test04() {
-		// TODO ここに追加
+		sectionDetailPage.clickDetailBtnInTodaysExam();
+		
+		assertEquals(Constants.TRUE_TITLE_EXAM_IT_LITERACY, webDriver.getTitle());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
