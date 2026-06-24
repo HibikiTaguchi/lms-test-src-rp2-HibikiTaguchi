@@ -104,7 +104,7 @@ public class Case13 {
 	@Order(5)
 	@DisplayName("テスト05 「試験を開始する」ボタンを押下し試験問題画面に遷移")
 	void test05() {
-		examItLiteracy1StartPage.clickStratExamBtn();
+		examItLiteracy1StartPage.clickStartExamBtn();
 		
 		assertEquals(Constants.TRUE_TITLE_EXAM_IT_LITERACY_1, webDriver.getTitle());
 		

@@ -18,17 +18,17 @@ public class ExamItLiteracy1StartPage {
 	private JavascriptExecutor js;
 	
 	// WebElement
-	@FindBy(xpath = "//input[@type='submit' and @value='試験を開始する'")
+	@FindBy(xpath = "//input[@type='submit' and @value='試験を開始する']")
 	private WebElement startExamBtn;
 	
-	public ExamItLiteracy1StartPage(WebDriver webDriver) {
+	public ExamItLiteracy1StartPage(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		this.js = (JavascriptExecutor) driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickStratExamBtn() {
+	public void clickStartExamBtn() {
 		js.executeScript("arguments[0].click();", startExamBtn);
 	}
 }
