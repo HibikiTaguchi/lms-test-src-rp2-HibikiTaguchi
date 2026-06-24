@@ -35,7 +35,7 @@ public class Case13 {
 	
 	private static SectionDetailPage sectionDetailPage;
 	
-	private static ExamItLiteracy1Page examItLiteracy1Page;
+	private static ExamItLiteracy1StartPage examItLiteracy1StartPage;
 
 	/** 前処理 */
 	@BeforeAll
@@ -44,7 +44,7 @@ public class Case13 {
 		loginPage = new LoginPage(webDriver);
 		courseDetailPage = new CourseDetailPage(webDriver);
 		sectionDetailPage = new SectionDetailPage(webDriver);
-		examItLiteracy1Page = new ExamItLiteracy1Page(webDriver);
+		examItLiteracy1StartPage = new ExamItLiteracy1StartPage(webDriver);
 	}
 
 	/** 後処理 */
@@ -104,7 +104,7 @@ public class Case13 {
 	@Order(5)
 	@DisplayName("テスト05 「試験を開始する」ボタンを押下し試験問題画面に遷移")
 	void test05() {
-		examItLiteracy1Page.clickStratExamBtn();
+		examItLiteracy1StartPage.clickStratExamBtn();
 		
 		assertEquals(Constants.TRUE_TITLE_EXAM_IT_LITERACY_1, webDriver.getTitle());
 		
