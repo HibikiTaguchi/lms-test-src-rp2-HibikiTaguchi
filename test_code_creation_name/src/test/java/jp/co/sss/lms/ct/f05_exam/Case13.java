@@ -34,6 +34,8 @@ public class Case13 {
 	private static CourseDetailPage courseDetailPage;
 	
 	private static SectionDetailPage sectionDetailPage;
+	
+	private static ExamItLiteracy1Page examItLiteracy1Page;
 
 	/** 前処理 */
 	@BeforeAll
@@ -42,6 +44,7 @@ public class Case13 {
 		loginPage = new LoginPage(webDriver);
 		courseDetailPage = new CourseDetailPage(webDriver);
 		sectionDetailPage = new SectionDetailPage(webDriver);
+		examItLiteracy1Page = new ExamItLiteracy1Page(webDriver);
 	}
 
 	/** 後処理 */
@@ -92,7 +95,7 @@ public class Case13 {
 	void test04() {
 		sectionDetailPage.clickDetailBtnInTodaysExam();
 		
-		assertEquals(Constants.TRUE_TITLE_EXAM_IT_LITERACY_1, webDriver.getTitle());
+		assertEquals(Constants.TRUE_TITLE_EXAM_IT_LITERACY_1_START, webDriver.getTitle());
 		
 		getEvidence(new Object(){});
 	}
@@ -101,7 +104,11 @@ public class Case13 {
 	@Order(5)
 	@DisplayName("テスト05 「試験を開始する」ボタンを押下し試験問題画面に遷移")
 	void test05() {
-		// TODO ここに追加
+		examItLiteracy1Page.clickStratExamBtn();
+		
+		assertEquals(Constants.TRUE_TITLE_EXAM_IT_LITERACY_1, webDriver.getTitle());
+		
+		getEvidence(new Object(){});		
 	}
 
 	@Test
