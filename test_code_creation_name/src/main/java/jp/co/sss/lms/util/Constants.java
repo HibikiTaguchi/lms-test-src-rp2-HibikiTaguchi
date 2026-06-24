@@ -403,6 +403,8 @@ public interface Constants {
 	
 	public static final String TRUE_TITLE_AGREE_SECURITY = "セキュリティ規約 | LMS";
 	
+	public static final String TRUE_TITLE_CHANGE_PASSWORD = "パスワード変更 | LMS";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	

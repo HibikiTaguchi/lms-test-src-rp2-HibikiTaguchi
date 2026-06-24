@@ -71,8 +71,7 @@ public class Case16 {
 		agreeSecurityPage.checkAgree();
 		agreeSecurityPage.clickNextBtn();
 		
-		assertEquals(Constants.TRUE_TITLE_LOGIN, webDriver.getTitle());
-		assertEquals(Constants.TRUE_H2_LOGIN, loginPage.getH2());
+		assertEquals(Constants.TRUE_TITLE_CHANGE_PASSWORD, webDriver.getTitle());
 		
 		getEvidence(new Object(){});
 	}
@@ -81,7 +80,9 @@ public class Case16 {
 	@Order(4)
 	@DisplayName("テスト04 パスワードを未入力で「変更」ボタン押下")
 	void test04() {
-		// TODO ここに追加
+		agreeSecurityPage.clickChangeBtn();
+		
+		
 	}
 
 	@Test
