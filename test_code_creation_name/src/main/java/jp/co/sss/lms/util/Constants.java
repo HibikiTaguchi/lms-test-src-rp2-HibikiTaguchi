@@ -424,6 +424,8 @@ public interface Constants {
 	
 	public static final String TRUE_TITLE_EXAM_IT_LITERACY_1 = "ITリテラシー① | LMS";
 	
+	public static final String TRUE_H2_EXAM_IT_LITERACY_1_CONFIRM = "回答数：0／12問";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
