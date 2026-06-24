@@ -113,14 +113,30 @@ public class Case16 {
 	@Order(6)
 	@DisplayName("テスト06 ポリシーに合わない変更パスワードを入力し「変更」ボタン押下")
 	void test06() {
-		// TODO ここに追加 
+		changePasswordPage.inputCurrentPasword(Constants.TRUE_PASSWORD_DEFAULT);
+		changePasswordPage.inputNewPassword(Constants.ERROR_NEW_PASSWORD_ILLEGAL);
+		changePasswordPage.inputComfirmPassword(Constants.ERROR_NEW_PASSWORD_ILLEGAL);
+		changePasswordPage.clickChangeBtn();
+		changePasswordPage.ckickChangeBtnInMordalWindow();
+		
+		assertEquals(Constants.ERROR_MESSAGE_NEW_PASSWORD_ILLEGAL, changePasswordPage.getError2Text());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(7)
 	@DisplayName("テスト07 一致しない確認パスワードを入力し「変更」ボタン押下")
 	void test07() {
-		// TODO ここに追加
+		changePasswordPage.inputCurrentPasword(Constants.TRUE_PASSWORD_DEFAULT);
+		changePasswordPage.inputNewPassword(Constants.TRUE_PASSWORD);
+		changePasswordPage.inputComfirmPassword(Constants.TRUE_PASSWORD_DEFAULT);
+		changePasswordPage.clickChangeBtn();
+		changePasswordPage.ckickChangeBtnInMordalWindow();
+		
+		assertEquals(Constants.ERROR_MESSAGE_PASSWORD_NOT_SAME, changePasswordPage.getError2Text());
+		
+		getEvidence(new Object(){});
 	}
 
 }

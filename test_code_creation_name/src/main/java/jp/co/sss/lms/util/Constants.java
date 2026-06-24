@@ -413,6 +413,11 @@ public interface Constants {
 	
 	public static final String ERROR_MESSAGE_NEW_PASSWORD_OVER_20 = "パスワードの長さが最大値(20)を超えています。";
 	
+	public static final String ERROR_MESSAGE_NEW_PASSWORD_ILLEGAL
+	= "「パスワード」には半角英数字のみ使用可能です。また、半角英大文字、半角英小文字、数字を含めた8～20文字を入力してください。";
+	
+	public static final String ERROR_MESSAGE_PASSWORD_NOT_SAME = "パスワードと確認パスワードが一致しません。";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
@@ -463,4 +468,7 @@ public interface Constants {
 	public static final String TRUE_PASSWORD_DEFAULT = TRUE_LOGIN_ID;
 	
 	public static final String ERROR_NEW_PASSWORD_OVER_20 = "StudentAA01StudentAA0";
+	
+	public static final String ERROR_NEW_PASSWORD_ILLEGAL = "0123456789";
+
 }
