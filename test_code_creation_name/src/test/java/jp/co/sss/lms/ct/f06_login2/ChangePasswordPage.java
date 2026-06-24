@@ -33,6 +33,15 @@ public class ChangePasswordPage {
 	@FindBy(xpath = "//*[@id=\"upd-form\"]/div[1]/fieldset/div[3]/div/ul/li")
 	private WebElement error3;
 	
+	@FindBy(id = "currentPassword")
+	private WebElement currentPasswordTextBox;
+	
+	@FindBy(id = "password")
+	private WebElement newPasswordTextBox;
+	
+	@FindBy(id = "passwordConfirm")
+	private WebElement comfirmPasswordTextBox;
+	
 	public ChangePasswordPage(WebDriver driver) {
 		this.driver = driver;  
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -59,5 +68,20 @@ public class ChangePasswordPage {
 
 	public void ckickChangeBtnInMordalWindow() {
 		js.executeScript("arguments[0].click();", changeBtnInMordalWindow);
+	}
+
+	public void inputCurrentPasword(String inputCurrentPassword) {
+		currentPasswordTextBox.clear();
+		currentPasswordTextBox.sendKeys(inputCurrentPassword);
+	}
+
+	public void inputNewPassword(String inputNewPassword) {
+		newPasswordTextBox.clear();
+		newPasswordTextBox.sendKeys(inputNewPassword);
+	}
+
+	public void inputComfirmPassword(String inputComfirmPassword) {
+		comfirmPasswordTextBox.clear();
+		comfirmPasswordTextBox.sendKeys(inputComfirmPassword);
 	}
 }
