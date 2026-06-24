@@ -1,8 +1,8 @@
 package jp.co.sss.lms.ct.f05_exam;
 
 import static jp.co.sss.lms.ct.util.WebDriverUtils.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.*;
 
 import java.util.Date;
 
@@ -121,7 +121,7 @@ public class Case13 {
 	void test06() {
 		examItLiteracy1Page.clickGoToConfirmBtn();
 		
-		assertThat(examItLiteracy1Page.getH2Text(), contains(Constants.TRUE_H2_EXAM_IT_LITERACY_1_CONFIRM));
+		assertThat(examItLiteracy1Page.getH2Text()).contains(Constants.TRUE_H2_EXAM_IT_LITERACY_1_CONFIRM);
 		
 		getEvidence(new Object(){});
 	}
