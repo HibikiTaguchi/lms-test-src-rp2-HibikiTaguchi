@@ -2,6 +2,7 @@ package jp.co.sss.lms.ct.f05_exam;
 
 import static jp.co.sss.lms.ct.util.WebDriverUtils.*;
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.*;
 
 import java.util.Date;
 
@@ -36,6 +37,8 @@ public class Case13 {
 	private static SectionDetailPage sectionDetailPage;
 	
 	private static ExamItLiteracy1StartPage examItLiteracy1StartPage;
+	
+	private static ExamItLiteracy1Page examItLiteracy1Page;
 
 	/** 前処理 */
 	@BeforeAll
@@ -45,6 +48,7 @@ public class Case13 {
 		courseDetailPage = new CourseDetailPage(webDriver);
 		sectionDetailPage = new SectionDetailPage(webDriver);
 		examItLiteracy1StartPage = new ExamItLiteracy1StartPage(webDriver);
+		examItLiteracy1Page = new ExamItLiteracy1Page(webDriver);
 	}
 
 	/** 後処理 */
@@ -115,7 +119,11 @@ public class Case13 {
 	@Order(6)
 	@DisplayName("テスト06 未回答の状態で「確認画面へ進む」ボタンを押下し試験回答確認画面に遷移")
 	void test06() {
-		// TODO ここに追加
+		examItLiteracy1Page.clickGoToConfirmBtn();
+		
+		assertThat(examItLiteracy1Page.getH2Text(), contains(Constants.TRUE_H2_EXAM_IT_LITERACY_1_CONFIRM));
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
