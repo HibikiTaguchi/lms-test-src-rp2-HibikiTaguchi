@@ -98,7 +98,15 @@ public class Case16 {
 	@Order(5)
 	@DisplayName("テスト05 20文字以上の変更パスワードを入力し「変更」ボタン押下")
 	void test05() {
-		// TODO ここに追加
+		changePasswordPage.inputCurrentPasword(Constants.TRUE_PASSWORD_DEFAULT);
+		changePasswordPage.inputNewPassword(Constants.ERROR_NEW_PASSWORD_OVER_20);
+		changePasswordPage.inputComfirmPassword(Constants.ERROR_NEW_PASSWORD_OVER_20);
+		changePasswordPage.clickChangeBtn();
+		changePasswordPage.ckickChangeBtnInMordalWindow();
+		
+		assertEquals(Constants.ERROR_MESSAGE_NEW_PASSWORD_OVER_20, changePasswordPage.getError2Text());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
