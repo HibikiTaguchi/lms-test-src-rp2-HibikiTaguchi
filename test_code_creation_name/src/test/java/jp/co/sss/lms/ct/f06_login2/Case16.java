@@ -1,6 +1,7 @@
 package jp.co.sss.lms.ct.f06_login2;
 
 import static jp.co.sss.lms.ct.util.WebDriverUtils.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -84,10 +85,11 @@ public class Case16 {
 	@DisplayName("テスト04 パスワードを未入力で「変更」ボタン押下")
 	void test04() {
 		changePasswordPage.clickChangeBtn();
+		changePasswordPage.ckickChangeBtnInMordalWindow();
 		
-		assertEquals(Constants.ERROR_MESSAGE_CURRENT_PASSWORD_REQUIRED, changePasswordPage.getErrorElements(0).getText());
-		assertEquals(Constants.ERROR_MESSAGE_NEW_PASSWORD_REQUIRED, changePasswordPage.getErrorElements(1).getText());
-		assertEquals(Constants.ERROR_MESSAGE_COMFIRM_PASSWORD_REQUIRED, changePasswordPage.getErrorElements(2).getText());
+		assertEquals(Constants.ERROR_MESSAGE_CURRENT_PASSWORD_REQUIRED, changePasswordPage.getError1Text());
+		assertThat(changePasswordPage.getError2Text()).contains(Constants.ERROR_MESSAGE_NEW_PASSWORD_REQUIRED);
+		assertEquals(Constants.ERROR_MESSAGE_COMFIRM_PASSWORD_REQUIRED, changePasswordPage.getError3Text());
 		
 		getEvidence(new Object(){});
 	}

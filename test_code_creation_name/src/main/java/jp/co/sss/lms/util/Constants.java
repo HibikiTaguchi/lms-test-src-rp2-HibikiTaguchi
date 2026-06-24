@@ -405,6 +405,12 @@ public interface Constants {
 	
 	public static final String TRUE_TITLE_CHANGE_PASSWORD = "パスワード変更 | LMS";
 	
+	public static final String ERROR_MESSAGE_CURRENT_PASSWORD_REQUIRED = "現在のパスワードは必須です。";
+	
+	public static final String ERROR_MESSAGE_NEW_PASSWORD_REQUIRED = "パスワードは必須です。";
+	
+	public static final String ERROR_MESSAGE_COMFIRM_PASSWORD_REQUIRED = "確認パスワードは必須です。";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
