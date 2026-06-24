@@ -418,6 +418,8 @@ public interface Constants {
 	
 	public static final String ERROR_MESSAGE_PASSWORD_NOT_SAME = "パスワードと確認パスワードが一致しません。";
 	
+	public static final String TRUE_TITLE_SECTION_DETAIL = "セクション詳細 | LMS";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
@@ -470,5 +472,4 @@ public interface Constants {
 	public static final String ERROR_NEW_PASSWORD_OVER_20 = "StudentAA01StudentAA0";
 	
 	public static final String ERROR_NEW_PASSWORD_ILLEGAL = "0123456789";
-
 }
