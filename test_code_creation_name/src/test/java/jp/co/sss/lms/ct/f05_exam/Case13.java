@@ -130,7 +130,11 @@ public class Case13 {
 	@Order(7)
 	@DisplayName("テスト07 「回答を送信する」ボタンを押下し試験結果画面に遷移")
 	void test07() throws InterruptedException {
-		// TODO ここに追加
+		examItLiteracy1Page.clickSendAnswerBtn();
+		
+		assertThat(examItLiteracy1Page.getH2Text()).contains(Constants.TRUE_H2_EXAM_IT_LITERACY_1_RESULT);
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test

@@ -24,6 +24,9 @@ public class ExamItLiteracy1Page {
 	@FindBy(tagName = "h2")
 	private WebElement h2;
 	
+	@FindBy(id = "sendButton")
+	private WebElement sendAnswerBtn;
+	
 	public ExamItLiteracy1Page(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -37,5 +40,10 @@ public class ExamItLiteracy1Page {
 
 	public String getH2Text() {
 		return h2.getText();
+	}
+
+	public void clickSendAnswerBtn() {
+		js.executeAsyncScript("arguments[0].click();", sendAnswerBtn);
+		driver.switchTo().alert().accept();
 	}
 }
