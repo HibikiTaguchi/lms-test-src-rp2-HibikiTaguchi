@@ -89,7 +89,7 @@ public class Case13 {
 	void test04() {
 		sectionDetailPage.clickDetailBtnInTodaysExam();
 		
-		assertEquals(Constants.TRUE_TITLE_EXAM_IT_LITERACY, webDriver.getTitle());
+		assertEquals(Constants.TRUE_TITLE_EXAM_IT_LITERACY_1, webDriver.getTitle());
 		
 		getEvidence(new Object(){});
 	}

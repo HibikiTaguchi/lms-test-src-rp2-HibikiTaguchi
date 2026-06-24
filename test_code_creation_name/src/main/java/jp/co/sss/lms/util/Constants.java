@@ -420,6 +420,8 @@ public interface Constants {
 	
 	public static final String TRUE_TITLE_SECTION_DETAIL = "セクション詳細 | LMS";
 	
+	public static final String TRUE_TITLE_EXAM_IT_LITERACY_1 = "試験【ITリテラシー①】 | LMS";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
