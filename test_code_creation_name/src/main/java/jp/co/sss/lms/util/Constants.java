@@ -432,6 +432,8 @@ public interface Constants {
 	
 	public static final String TRUE_H2_EXAM_IT_LITERACY_1_CONFIRM_HALF = "回答数：12／12問";
 	
+	public static final String TRUE_TITLE_ATTENDANCE_INFO_MANAGEMENT = "勤怠情報変更｜LMS";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
