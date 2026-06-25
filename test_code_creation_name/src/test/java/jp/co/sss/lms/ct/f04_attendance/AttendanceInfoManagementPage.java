@@ -2,6 +2,7 @@ package jp.co.sss.lms.ct.f04_attendance;
 
 import java.time.Duration;
 import java.util.Date;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -39,7 +40,7 @@ public class AttendanceInfoManagementPage {
 	private WebElement attendanceForm;
 
 	@FindBy(xpath = "//button[contains(text(),'定時')]")
-	private WebElement defaultTimeBtn;
+	private List<WebElement> defaultTimeBtns;
 	
 	public AttendanceInfoManagementPage(WebDriver driver) {
 		this.driver = driver;
@@ -77,7 +78,11 @@ public class AttendanceInfoManagementPage {
 		WebDriverUtils.clickElement(changeAttendanceInfoDirectly);
 	}
 
-	public WebElement getDefaultTimeBtn() {
-		return defaultTimeBtn;
+	public List<WebElement> getDefaultTimeBtns() {
+		return defaultTimeBtns;
+	}
+
+	public WebElement getChangeAttendanceInfoDirectly() {
+		return changeAttendanceInfoDirectly;
 	}
 }

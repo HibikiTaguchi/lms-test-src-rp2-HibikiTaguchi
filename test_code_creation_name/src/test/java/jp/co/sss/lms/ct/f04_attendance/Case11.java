@@ -85,7 +85,7 @@ public class Case11 {
 	void test04() {
 		attendanceInfoManagementPage.clickChangeAttendanceInfoDirectly();
 		
-		assertNotNull(attendanceInfoManagementPage.getDefaultTimeBtn());
+		assertNotNull(attendanceInfoManagementPage.getDefaultTimeBtns());
 
 		getEvidence(new Object(){});
 	}
@@ -94,7 +94,13 @@ public class Case11 {
 	@Order(5)
 	@DisplayName("テスト05 すべての研修日程の勤怠情報を正しく更新し勤怠管理画面に遷移")
 	void test05() {
-		// TODO ここに追加
+		attendanceInfoManagementPage.clickAllDefaultTimeBtns();
+		attendanceInfoManagementPage.clickUpdateBtn();
+		
+		assertEquals(Constants.TRUE_TITLE_ATTENDANCE_INFO_MANAGEMENT, webDriver.getTitle());
+		assertNotNull(attendanceInfoManagementPage.getChangeAttendanceInfoDirectly());
+		
+		getEvidence(new Object(){});
 	}
 
 }
