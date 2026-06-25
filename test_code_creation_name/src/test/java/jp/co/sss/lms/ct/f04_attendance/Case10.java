@@ -94,7 +94,11 @@ public class Case10 {
 	@Order(5)
 	@DisplayName("テスト05 「退勤」ボタンを押下し退勤時間を登録")
 	void test05() {
-		// TODO ここに追加
+		attendanceInfoManagementPage.clickPunchOutBtn();
+		
+		assertNotNull(attendanceInfoManagementPage.getThePunchOut());
+		
+		getEvidence(new Object(){});
 	}
 
 }
