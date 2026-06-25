@@ -30,6 +30,42 @@ public class ExamItLiteracy1Page {
 	@FindBy(xpath = "//input[@type='submit' and @value='戻る']")
 	private WebElement backBtn;
 	
+	@FindBy(id = "answer-0-2")
+	private WebElement answer1RadioButton;
+	
+	@FindBy(id = "answer-1-2")
+	private WebElement answer2RadioButton;
+	
+	@FindBy(id = "answer-2-0")
+	private WebElement answer3RadioButton;
+	
+	@FindBy(id = "answer-3-0")
+	private WebElement answer4RadioButton;
+	
+	@FindBy(id = "answer-4-1")
+	private WebElement answer5RadioButton;
+	
+	@FindBy(id = "answer-5-1")
+	private WebElement answer6RadioButton;
+	
+	@FindBy(id = "answer-6-0")
+	private WebElement answer7RadioButton;
+	
+	@FindBy(id = "answer-7-0")
+	private WebElement answer8RadioButton;
+	
+	@FindBy(id = "answer-8-0")
+	private WebElement answer9RadioButton;
+	
+	@FindBy(id = "answer-9-0")
+	private WebElement answer10RadioButton;
+
+	@FindBy(id = "answer-10-0")
+	private WebElement answer11RadioButton;
+	
+	@FindBy(id = "answer-11-0")
+	private WebElement answer12RadioButton;
+	
 	public ExamItLiteracy1Page(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -52,5 +88,20 @@ public class ExamItLiteracy1Page {
 
 	public void clickBackBtn() {
 		js.executeScript("arguments[0].click();", backBtn);
+	}
+
+	public void selectAnswer() {
+		answer1RadioButton.click();
+		answer2RadioButton.click();
+		answer3RadioButton.click();
+		answer4RadioButton.click();
+		answer5RadioButton.click();
+		answer6RadioButton.click();
+		answer7RadioButton.click();
+		answer8RadioButton.click();
+		answer9RadioButton.click();
+		answer10RadioButton.click();
+		answer11RadioButton.click();
+		answer12RadioButton.click();
 	}
 }
