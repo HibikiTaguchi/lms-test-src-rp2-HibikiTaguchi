@@ -1,0 +1,59 @@
+package jp.co.sss.lms.ct.f04_attendance;
+
+import java.time.Duration;
+import java.util.Date;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import jp.co.sss.lms.ct.util.WebDriverUtils;
+import jp.co.sss.lms.util.DateUtil;
+
+public class AttendanceInfoManagementPage {
+
+	private WebDriver driver;
+	
+	private WebDriverWait wait;
+	
+	private JavascriptExecutor js;
+
+	// WebElement
+	@FindBy(xpath = "//input[@type='submit' and @name='punchIn']")
+	private WebElement punchInBtn;
+	
+	private WebElement thePunchIn;
+	
+	public AttendanceInfoManagementPage(WebDriver driver) {
+		this.driver = driver;
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		this.js = (JavascriptExecutor) driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	public void clickPunchInBtn() throws InterruptedException {
+		WebDriverUtils.clickElement(punchInBtn);
+		WebDriverUtils.acceptAlert();
+	}
+
+	public WebElement getThePunchIn() {
+		DateUtil dateUtil = new DateUtil();
+		Date now = new Date();
+		
+		String today = dateUtil.toString(now, "yyyy年M月d日");
+		String punchInTime = dateUtil.dateToString(now, "HH:mm");
+		
+		thePunchIn = driver.findElement(By.xpath(
+			"//td[contains(text(),'" + today + "')]/following-sibling::td[contains(text(),'" + punchInTime + "')]"));
+		
+		wait.until(ExpectedConditions.visibilityOf(punchInBtn));
+		
+		return thePunchIn;
+	}
+	
+}

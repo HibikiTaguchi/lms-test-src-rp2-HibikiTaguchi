@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -140,5 +141,18 @@ public class WebDriverUtils {
 		Object[] windowHandles = webDriver.getWindowHandles().toArray();
 		webDriver.switchTo().window((String) windowHandles[tabNumber]);
 	}
+	
+	// 自作
+	/**
+	 * 要素を引数に渡すとそれをクリックする
+	 * @param element クリックしたい要素
+	 */
+	public static void clickElement(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) webDriver;
+		js.executeScript("arguments[0].click();", element);
+	}
 
+	public static void acceptAlert() {
+		webDriver.switchTo().alert().accept();
+	}
 }

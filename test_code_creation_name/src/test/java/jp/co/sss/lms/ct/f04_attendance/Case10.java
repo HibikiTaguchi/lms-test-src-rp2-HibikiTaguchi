@@ -28,12 +28,15 @@ public class Case10 {
 	
 	private static CourseDetailPage courseDetailPage;
 	
+	private static AttendanceInfoManagementPage attendanceInfoManagementPage;
+	
 	/** 前処理 */
 	@BeforeAll
 	static void before() {
 		createDriver();
 		loginPage = new LoginPage(webDriver);
 		courseDetailPage = new CourseDetailPage(webDriver);
+		attendanceInfoManagementPage = new AttendanceInfoManagementPage(webDriver);
 	}
 
 	/** 後処理 */
@@ -79,8 +82,8 @@ public class Case10 {
 	@Test
 	@Order(4)
 	@DisplayName("テスト04 「出勤」ボタンを押下し出勤時間を登録")
-	void test04() {
-		attendanceInfoManagementPage.clickPunchIn();
+	void test04() throws InterruptedException {
+		attendanceInfoManagementPage.clickPunchInBtn();
 		
 		assertNotNull(attendanceInfoManagementPage.getThePunchIn());
 		
