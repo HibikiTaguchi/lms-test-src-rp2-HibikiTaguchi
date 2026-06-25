@@ -428,6 +428,10 @@ public interface Constants {
 	
 	public static final String TRUE_H2_EXAM_IT_LITERACY_1_RESULT = "あなたのスコア：0.0点";
 	
+	public static final String TRUE_H2_EXAM_IT_LITERACY_1_RESULT_HALF = "あなたのスコア：50.0点";
+	
+	public static final String TRUE_H2_EXAM_IT_LITERACY_1_CONFIRM_HALF = "回答数：12／12問";
+	
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
