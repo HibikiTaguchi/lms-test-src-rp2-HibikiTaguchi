@@ -80,7 +80,11 @@ public class Case10 {
 	@Order(4)
 	@DisplayName("テスト04 「出勤」ボタンを押下し出勤時間を登録")
 	void test04() {
-		// TODO ここに追加
+		attendanceInfoManagementPage.clickPunchIn();
+		
+		assertNotNull(attendanceInfoManagementPage.getThePunchIn());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
