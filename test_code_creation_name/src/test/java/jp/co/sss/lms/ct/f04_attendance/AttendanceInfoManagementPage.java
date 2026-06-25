@@ -32,6 +32,15 @@ public class AttendanceInfoManagementPage {
 	@FindBy(xpath = "//input[@type='submit' and @name='punchOut']")
 	private WebElement punchOutBtn;
 	
+	@FindBy(partialLinkText = "勤怠情報を直接編集する")
+	private WebElement changeAttendanceInfoDirectly;
+	
+	@FindBy(name = "attendanceForm")
+	private WebElement attendanceForm;
+
+	@FindBy(xpath = "//button[contains(text(),'定時')]")
+	private WebElement defaultTimeBtn;
+	
 	public AttendanceInfoManagementPage(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -63,5 +72,12 @@ public class AttendanceInfoManagementPage {
 		WebDriverUtils.clickElement(punchOutBtn);
 		WebDriverUtils.acceptAlert();
 	}
-	
+
+	public void clickChangeAttendanceInfoDirectly() {
+		WebDriverUtils.clickElement(changeAttendanceInfoDirectly);
+	}
+
+	public WebElement getDefaultTimeBtn() {
+		return defaultTimeBtn;
+	}
 }
