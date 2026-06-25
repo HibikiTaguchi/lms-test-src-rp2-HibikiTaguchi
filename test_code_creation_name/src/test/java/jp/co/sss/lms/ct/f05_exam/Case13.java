@@ -130,7 +130,9 @@ public class Case13 {
 	@Order(7)
 	@DisplayName("テスト07 「回答を送信する」ボタンを押下し試験結果画面に遷移")
 	void test07() throws InterruptedException {
+		Thread.sleep(2000);
 		examItLiteracy1Page.clickSendAnswerBtn();
+		
 		
 		assertThat(examItLiteracy1Page.getH2Text()).contains(Constants.TRUE_H2_EXAM_IT_LITERACY_1_RESULT);
 		
@@ -141,7 +143,11 @@ public class Case13 {
 	@Order(8)
 	@DisplayName("テスト08 「戻る」ボタンを押下し試験開始画面に遷移後当該試験の結果が反映される")
 	void test08() {
-		// TODO ここに追加
+		examItLiteracy1Page.clickBackBtn();
+		
+		assertEquals(Constants.TRUE_TITLE_EXAM_IT_LITERACY_1_START, webDriver.getTitle());
+		
+		getEvidence(new Object(){});
 	}
 
 }

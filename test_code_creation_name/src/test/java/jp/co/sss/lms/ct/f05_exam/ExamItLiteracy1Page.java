@@ -27,6 +27,9 @@ public class ExamItLiteracy1Page {
 	@FindBy(id = "sendButton")
 	private WebElement sendAnswerBtn;
 	
+	@FindBy(xpath = "//input[@type='submit' and @value='戻る']")
+	private WebElement backBtn;
+	
 	public ExamItLiteracy1Page(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -45,5 +48,9 @@ public class ExamItLiteracy1Page {
 	public void clickSendAnswerBtn() {
 		js.executeAsyncScript("arguments[0].click();", sendAnswerBtn);
 		driver.switchTo().alert().accept();
+	}
+
+	public void clickBackBtn() {
+		js.executeScript("arguments[0].click();", backBtn);
 	}
 }
