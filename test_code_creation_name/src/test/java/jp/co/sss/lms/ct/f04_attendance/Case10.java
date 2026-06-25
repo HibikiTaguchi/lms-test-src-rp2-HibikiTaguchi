@@ -56,11 +56,11 @@ public class Case10 {
 
 	@Test
 	@Order(2)
-	@DisplayName("テスト02 DBに初期登録された未ログインの受講生ユーザーでログイン")
+	@DisplayName("テスト02 初回ログイン済みの受講生ユーザーでログイン")
 	void test02() {
-		loginPage.tryLogin(Constants.TRUE_LOGIN_ID, Constants.TRUE_PASSWORD_DEFAULT);
+		loginPage.tryLogin(Constants.TRUE_LOGIN_ID, Constants.TRUE_PASSWORD);
 		
-		assertEquals(Constants.TRUE_TITLE_AGREE_SECURITY, webDriver.getTitle());
+		assertEquals(Constants.TRUE_TITLE_COURCE_DETAIL, webDriver.getTitle());
 		
 		getEvidence(new Object(){});
 	}

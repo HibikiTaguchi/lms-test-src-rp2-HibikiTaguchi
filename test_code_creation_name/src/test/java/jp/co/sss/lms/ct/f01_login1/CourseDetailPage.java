@@ -30,6 +30,9 @@ public class CourseDetailPage {
 	@FindBy(partialLinkText = "ようこそ受講生ＡＡ１さん")
 	private WebElement userLink;
 	
+	@FindBy(partialLinkText = "勤怠")
+	private WebElement attendanceLink;
+	
 	@FindBy(xpath = "//span[contains(text(),'試験有')]/../following-sibling::td/form/input[@type='submit']")
 	private WebElement detailBtnInExamDate;
 	
@@ -63,5 +66,10 @@ public class CourseDetailPage {
 
 	public void clickDetailBtnInExamDate() {
 		js.executeScript("arguments[0].click();", detailBtnInExamDate);
+	}
+
+	public void clickAttendance() {
+		js.executeScript("arguments[0].click();", attendanceLink);
+		driver.switchTo().alert().accept();
 	}
 }
