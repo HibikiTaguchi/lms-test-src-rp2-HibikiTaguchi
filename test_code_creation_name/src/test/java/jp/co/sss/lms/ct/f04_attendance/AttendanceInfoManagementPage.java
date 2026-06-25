@@ -41,6 +41,9 @@ public class AttendanceInfoManagementPage {
 
 	@FindBy(xpath = "//button[contains(text(),'定時')]")
 	private List<WebElement> defaultTimeBtns;
+
+	@FindBy(xpath = "//input[@type='submit' and @name='complete']")
+	private WebElement updateBtn;
 	
 	public AttendanceInfoManagementPage(WebDriver driver) {
 		this.driver = driver;
@@ -84,5 +87,16 @@ public class AttendanceInfoManagementPage {
 
 	public WebElement getChangeAttendanceInfoDirectly() {
 		return changeAttendanceInfoDirectly;
+	}
+
+	public void clickAllDefaultTimeBtns() {
+		for (WebElement btn : defaultTimeBtns) {
+			WebDriverUtils.clickElement(btn);
+		}
+	}
+
+	public void clickUpdateBtn() {
+		WebDriverUtils.clickElement(updateBtn);
+		WebDriverUtils.acceptAlert();
 	}
 }
