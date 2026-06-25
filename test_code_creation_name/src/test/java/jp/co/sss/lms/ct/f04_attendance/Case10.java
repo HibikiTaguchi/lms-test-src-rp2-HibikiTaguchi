@@ -85,7 +85,7 @@ public class Case10 {
 	void test04() throws InterruptedException {
 		attendanceInfoManagementPage.clickPunchInBtn();
 		
-		assertNotNull(attendanceInfoManagementPage.getThePunchIn());
+		assertNotNull(attendanceInfoManagementPage.getThePunchTime());
 		
 		getEvidence(new Object(){});
 	}
@@ -96,7 +96,7 @@ public class Case10 {
 	void test05() {
 		attendanceInfoManagementPage.clickPunchOutBtn();
 		
-		assertNotNull(attendanceInfoManagementPage.getThePunchOut());
+		assertNotNull(attendanceInfoManagementPage.getThePunchTime());
 		
 		getEvidence(new Object(){});
 	}

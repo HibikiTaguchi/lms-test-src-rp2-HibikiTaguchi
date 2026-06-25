@@ -27,7 +27,10 @@ public class AttendanceInfoManagementPage {
 	@FindBy(xpath = "//input[@type='submit' and @name='punchIn']")
 	private WebElement punchInBtn;
 	
-	private WebElement thePunchIn;
+	private WebElement thePunchTime;
+
+	@FindBy(xpath = "//input[@type='submit' and @name='punchOut']")
+	private WebElement punchOutBtn;
 	
 	public AttendanceInfoManagementPage(WebDriver driver) {
 		this.driver = driver;
@@ -41,19 +44,24 @@ public class AttendanceInfoManagementPage {
 		WebDriverUtils.acceptAlert();
 	}
 
-	public WebElement getThePunchIn() {
+	public WebElement getThePunchTime() {
 		DateUtil dateUtil = new DateUtil();
 		Date now = new Date();
 		
 		String today = dateUtil.toString(now, "yyyy年M月d日");
 		String punchInTime = dateUtil.dateToString(now, "HH:mm");
 		
-		thePunchIn = driver.findElement(By.xpath(
+		thePunchTime = driver.findElement(By.xpath(
 			"//td[contains(text(),'" + today + "')]/following-sibling::td[contains(text(),'" + punchInTime + "')]"));
 		
 		wait.until(ExpectedConditions.visibilityOf(punchInBtn));
 		
-		return thePunchIn;
+		return thePunchTime;
+	}
+
+	public void clickPunchOutBtn() {
+		WebDriverUtils.clickElement(punchOutBtn);
+		WebDriverUtils.acceptAlert();
 	}
 	
 }
