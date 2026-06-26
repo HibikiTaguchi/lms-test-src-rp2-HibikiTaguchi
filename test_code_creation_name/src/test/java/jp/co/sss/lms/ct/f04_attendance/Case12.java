@@ -143,7 +143,7 @@ public class Case12 {
 	void test09() {
 		attendanceInfoManagementDirectlyPage.inputAttendanceInfo("09", "00", "18", "00", "", Constants.ATTENDANCE_NOTE_OVER_100);
 		
-		assertThat(attendanceInfoManagementDirectlyPage.getErrorMsg().contains(Constants.ERROR_MESSAGE_ATTENDANCE_IMPOSSIBLE_BLANKTIME));
+		assertThat(attendanceInfoManagementDirectlyPage.getErrorMsg().contains(Constants.ERROR_MESSAGE_ATTENDANCE_NOTE_OVER));
 		
 		getEvidence(new Object(){});
 	}

@@ -436,6 +436,13 @@ public interface Constants {
 	
 	public static final String ERROR_MESSAGE_ATTENDANCE_ILLEGAL_TIME = "* 退勤時間が正しく入力されていません。";
 	
+	public static final String ERROR_MESSAGE_ATTENDANCE_NONE_PUNCH_IN = "* 出勤情報がないため退勤情報を入力出来ません。";
+	
+	public static final String ERROR_MESSAGE_ATTENDANCE_CONTRADICTORY_TIME = "* 退勤時刻[0]は出勤時刻[0]より後でなければいけません。";
+	
+	public static final String ERROR_MESSAGE_ATTENDANCE_IMPOSSIBLE_BLANKTIME = "* 中抜け時間が勤務時間を超えています。";
+	
+	public static final String ERROR_MESSAGE_ATTENDANCE_NOTE_OVER = "* 備考の長さが最大値(100)を超えています。";
 	// テスト入力値
 	public static final String WRONG_ID = "student";
 	
@@ -488,4 +495,7 @@ public interface Constants {
 	public static final String ERROR_NEW_PASSWORD_OVER_20 = "StudentAA01StudentAA0";
 	
 	public static final String ERROR_NEW_PASSWORD_ILLEGAL = "0123456789";
+	
+	public static final String ATTENDANCE_NOTE_OVER_100 = "ﾄｻ｢ﾝｷB`M7/ｼﾓﾋeｮTKｳｵo9ﾘjW?ｾﾃ;%4,｡}ｩｸ37ﾔｼﾑｳﾒｸFﾑ｡ｶﾃk｡ｷq"
+			+ "ﾎ%ﾗPｹpzbv3%~ｱｨxﾙﾊcQﾞ!tﾚﾌ,O!ｹk3Sﾒｵﾔﾋｺ:2Ma]vQﾒｩ_ｸｦﾋ";
 }
