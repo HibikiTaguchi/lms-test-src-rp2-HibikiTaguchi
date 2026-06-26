@@ -434,7 +434,7 @@ public interface Constants {
 	
 	public static final String TRUE_TITLE_ATTENDANCE_INFO_MANAGEMENT = "勤怠情報変更｜LMS";
 	
-	public static final String ERROR_MESSAGE_ATTENDANCE_ILLEGAL_TIME = "* 退勤時間が正しく入力されていません。";
+	public static final String ERROR_MESSAGE_ATTENDANCE_ILLEGAL_TIME = "* 退勤時間が正しく入力されていません。";
 	
 	// テスト入力値
 	public static final String WRONG_ID = "student";

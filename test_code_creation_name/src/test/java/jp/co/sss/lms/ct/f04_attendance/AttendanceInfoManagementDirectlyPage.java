@@ -53,7 +53,6 @@ public class AttendanceInfoManagementDirectlyPage {
 	}
 
 	public void inputSelect(WebElement selectElement, String punchTime) {
-		selectElement.clear();
 		Select dropDown = new Select(selectElement);
 		dropDown.selectByVisibleText(punchTime);
 	}
@@ -72,6 +71,7 @@ public class AttendanceInfoManagementDirectlyPage {
 		inputSelect(blankTime0, blankTime);
 		inputNote(note);
 		WebDriverUtils.clickElement(updateBtn);
+		WebDriverUtils.acceptAlert();
 	}
 
 	public String getErrorMsg() {

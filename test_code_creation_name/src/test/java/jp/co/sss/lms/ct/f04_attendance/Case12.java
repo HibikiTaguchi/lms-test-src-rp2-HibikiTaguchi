@@ -1,6 +1,7 @@
 package jp.co.sss.lms.ct.f04_attendance;
 
 import static jp.co.sss.lms.ct.util.WebDriverUtils.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -98,7 +99,7 @@ public class Case12 {
 	void test05() {
 		attendanceInfoManagementDirectlyPage.inputAttendanceInfo("09", "00", "18", "", "", "");
 		
-		assertEquals(Constants.ERROR_MESSAGE_ATTENDANCE_ILLEGAL_TIME, attendanceInfoManagementDirectlyPage.getErrorMsg());
+		assertThat(attendanceInfoManagementDirectlyPage.getErrorMsg().contains(Constants.ERROR_MESSAGE_ATTENDANCE_ILLEGAL_TIME));
 		
 		getEvidence(new Object(){});
 	}
@@ -107,28 +108,44 @@ public class Case12 {
 	@Order(6)
 	@DisplayName("テスト06 不適切な内容で修正してエラー表示：出勤が空白で退勤に入力あり")
 	void test06() {
-		// TODO ここに追加
+		attendanceInfoManagementDirectlyPage.inputAttendanceInfo("", "", "18", "00", "", "");
+		
+		assertThat(attendanceInfoManagementDirectlyPage.getErrorMsg().contains(Constants.ERROR_MESSAGE_ATTENDANCE_NONE_PUNCH_IN));
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(7)
 	@DisplayName("テスト07 不適切な内容で修正してエラー表示：出勤が退勤よりも遅い時間")
 	void test07() {
-		// TODO ここに追加
+		attendanceInfoManagementDirectlyPage.inputAttendanceInfo("18", "00", "09", "00", "", "");
+		
+		assertThat(attendanceInfoManagementDirectlyPage.getErrorMsg().contains(Constants.ERROR_MESSAGE_ATTENDANCE_CONTRADICTORY_TIME));
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(8)
 	@DisplayName("テスト08 不適切な内容で修正してエラー表示：出退勤時間を超える中抜け時間")
 	void test08() {
-		// TODO ここに追加
+		attendanceInfoManagementDirectlyPage.inputAttendanceInfo("13", "00", "18", "00", "5時間", "");
+		
+		assertThat(attendanceInfoManagementDirectlyPage.getErrorMsg().contains(Constants.ERROR_MESSAGE_ATTENDANCE_IMPOSSIBLE_BLANKTIME));
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
 	@Order(9)
 	@DisplayName("テスト09 不適切な内容で修正してエラー表示：備考が100文字超")
 	void test09() {
-		// TODO ここに追加
+		attendanceInfoManagementDirectlyPage.inputAttendanceInfo("09", "00", "18", "00", "", Constants.ATTENDANCE_NOTE_OVER_100);
+		
+		assertThat(attendanceInfoManagementDirectlyPage.getErrorMsg().contains(Constants.ERROR_MESSAGE_ATTENDANCE_IMPOSSIBLE_BLANKTIME));
+		
+		getEvidence(new Object(){});
 	}
 
 }
