@@ -30,6 +30,8 @@ public class Case12 {
 	
 	private static AttendanceInfoManagementPage attendanceInfoManagementPage;
 	
+	private static AttendanceInfoManagementDirectlyPage attendanceInfoManagementDirectlyPage;
+	
 	/** 前処理 */
 	@BeforeAll
 	static void before() {
@@ -93,7 +95,16 @@ public class Case12 {
 	@Order(5)
 	@DisplayName("テスト05 不適切な内容で修正してエラー表示：出退勤の（時）と（分）のいずれかが空白")
 	void test05() {
-		// TODO ここに追加
+		attendanceInfoManagementDirectlyPage.inputPunchInHour(9);
+		attendanceInfoManagementDirectlyPage.inputPunchInMinute(0);
+		attendanceInfoManagementDirectlyPage.inputPunchOutHour(18);
+		attendanceInfoManagementDirectlyPage.inputPunchOutMinute("");
+		attendanceInfoManagementDirectlyPage.inputInterval("");
+		attendanceInfoManagementDirectlyPage.inputNotes("");
+		
+		assertEquals(Constants.ERROR_MESSAGE_ATTENDANCE_ILLEGAL_TIME, attendanceInfoManagementDirectlyPage.getErrorMsg());
+		
+		getEvidence(new Object(){});
 	}
 
 	@Test
