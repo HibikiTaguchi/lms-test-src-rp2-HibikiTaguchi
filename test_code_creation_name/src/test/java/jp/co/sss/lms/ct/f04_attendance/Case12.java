@@ -39,6 +39,7 @@ public class Case12 {
 		loginPage = new LoginPage(webDriver);
 		courseDetailPage = new CourseDetailPage(webDriver);
 		attendanceInfoManagementPage = new AttendanceInfoManagementPage(webDriver);
+		attendanceInfoManagementDirectlyPage = new AttendanceInfoManagementDirectlyPage(webDriver);
 	}
 
 	/** 後処理 */
@@ -95,12 +96,7 @@ public class Case12 {
 	@Order(5)
 	@DisplayName("テスト05 不適切な内容で修正してエラー表示：出退勤の（時）と（分）のいずれかが空白")
 	void test05() {
-		attendanceInfoManagementDirectlyPage.inputPunchInHour(9);
-		attendanceInfoManagementDirectlyPage.inputPunchInMinute(0);
-		attendanceInfoManagementDirectlyPage.inputPunchOutHour(18);
-		attendanceInfoManagementDirectlyPage.inputPunchOutMinute("");
-		attendanceInfoManagementDirectlyPage.inputInterval("");
-		attendanceInfoManagementDirectlyPage.inputNotes("");
+		attendanceInfoManagementDirectlyPage.inputAttendanceInfo("09", "00", "18", "", "", "");
 		
 		assertEquals(Constants.ERROR_MESSAGE_ATTENDANCE_ILLEGAL_TIME, attendanceInfoManagementDirectlyPage.getErrorMsg());
 		
